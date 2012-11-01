@@ -1,0 +1,24 @@
+{
+  "name": "build-status",
+  "version": "0.0.1",
+  "description": "big warning lights for teamcity",
+  "main": "server.pogo",
+  "dependencies": {
+    "connect-compiler": "~0.1.3",
+    "express": "~3.0.0",
+    "httpism": "~0.0.2",
+    "jquery": "~1.7.3",
+    "jsdom": "~0.2.19",
+    "less": "~1.3.1",
+    "optimist": "~0.3.5",
+    "pogo": "~0.0.4",
+    "request": "~2.11.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "Tim Macfarlane",
+  "license": "BSD"
+}

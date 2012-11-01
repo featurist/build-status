@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html lang="en" ng-app="status">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="status.js"></script>
+    <style type="text/css">
+        .failure {
+            background-color: crimson;
+        }
+        h1, p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body ng-controller="statusController" ng-class="status">
+    <h1>{{name}}</h1>
+    <p>
+    Revision: {{revision}}
+    <br>
+    <br>
+    <img ng-src="{{image}}" alt="" />
+    </p>
+</body>
+</html>
