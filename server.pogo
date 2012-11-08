@@ -2,7 +2,8 @@ express = require 'express'
 argv = require 'optimist'.default 'p' '4000'.alias 'p' 'port'.demand('teamcity').argv
 compiler = require 'connect-compiler'
 httpism = require 'httpism'
-jquery = require 'jquery'
+xml2js = require 'xml2js'
+xml parser = new (xml2js.Parser)
 
 serve directory (dir) =
     cache dir = "#(dir)/.cache"
@@ -26,11 +27,12 @@ serve directory (dir) =
     get '/status/:id' @(req, res)
         id = req.params.id
         res = httpism.get! "http://#(argv.teamcity)/guestAuth/app/rest/builds/buildType:#(id)"
-        $body = jquery(res.body)
-        status = $body.attr 'status'
-        name = $body.find 'buildType'.attr 'name'
-        project name = $body.find 'buildType'.attr 'projectName'
-        revision = $body.find 'revision'.attr 'version'
+        build details = xml parser.parse string! (res.body)
+
+        status =       build details.build.$.status
+        name =         build details.build.build type.0.$.name
+        project name = build details.build.build type.0.$.project name
+        revision =     build details.build.revisions.0.revision.0.$.version
         {status = status, revision = revision, name = name, project name = project name}
 
     app.listen (parse int (argv.p))
