@@ -16,6 +16,7 @@ serve directory (dir) =
     })
     app.use (express.static (dir))
     app.use (express.static (cache dir))
+    app.set 'view engine' 'ejs'
 
     get (url, block) = app.get (url) @(req, res)
         block (req, res) @(error, result)
@@ -23,6 +24,9 @@ serve directory (dir) =
                 res.send (500, error.to string ())
             else
                 res.send (result)
+
+    app.get '/:id' @(req, res)
+        res.render ('index', {build type = req.params.id})
 
     get '/status/:id' @(req, res)
         id = req.params.id

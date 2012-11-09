@@ -12,8 +12,11 @@ status module.factory 'refreshEvery' @($timeout)
         tick ()
 
 window.status controller ($scope, refresh every, $http) =
+    build type = window.location.pathname.replace r/^\// ''
+    console.log (build type)
+
     refresh every 1000
-        $http(method: 'GET', url: '/status/bt2').success @(status)
+        $http(method: 'GET', url: "/status/#(build type)").success @(status)
             for @(field) in (status)
                 if (status.has own property (field))
                     $scope.(field) = status.(field)
