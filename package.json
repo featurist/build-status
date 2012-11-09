@@ -4,7 +4,7 @@
   "description": "big warning lights for teamcity",
   "main": "server.pogo",
   "dependencies": {
-    "connect-compiler": "~0.1.2",
+    "connect-compiler": "git+https://github.com/featurist/connect-compiler.git",
     "express": "~3.0.0",
     "httpism": "~0.0.2",
     "xml2js": "~0.2.0",
