@@ -21,7 +21,7 @@ window.status controller ($scope, refresh every, $http) =
                 if (status.has own property (field))
                     $scope.(field) = status.(field)
 
-            status = status.status.to lower case ()
+            status := status.status.to lower case ()
             $scope.status = status
             $scope.image =
                 if (status == 'success')

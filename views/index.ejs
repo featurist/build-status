@@ -7,10 +7,18 @@
     <script type="text/javascript" src="status.js"></script>
     <style type="text/css">
         .failure {
-            background-color: crimson;
+            background-color: red;
+        }
+        .success {
+            background-color: green;
         }
         h1, p {
             text-align: center;
+        }
+        html, body {
+          height:90%;
+          margin:0;
+          padding:0;
         }
     </style>
 </head>
@@ -20,7 +28,7 @@
     Revision: {{revision}}
     <br>
     <br>
-    <img ng-src="{{image}}" alt="" />
+    <img ng-src="{{image}}" alt="" height="80%" />
     </p>
 </body>
 </html>
