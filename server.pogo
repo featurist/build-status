@@ -30,7 +30,7 @@ serve directory (dir) =
 
     get '/status/:id' @(req, res)
         id = req.params.id
-        res = httpism.get! "http://#(argv.teamcity)/guestAuth/app/rest/builds/buildType:#(id)"
+        res := httpism.get! "http://#(argv.teamcity)/guestAuth/app/rest/builds/buildType:#(id)"
         build details = xml parser.parse string! (res.body)
 
         status =       build details.build.$.status
